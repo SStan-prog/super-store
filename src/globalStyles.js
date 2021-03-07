@@ -8,7 +8,7 @@ html{
 
 
 :root{
-     --darkBlue: #155263;
+     --darkBlue: #3185fc;
      --brightOrange: #ff6f3c;
      --darkYellow: #ff9a3c;
      --brightYellow: #ffc93c;

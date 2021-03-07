@@ -1,5 +1,4 @@
 import React from "react";
-import reactDom from "react-dom";
 
 import {
   Nav,
@@ -8,55 +7,47 @@ import {
   NavbarLink,
   NavbarLogo,
 } from "./NavbarElements";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "../../../pages/Home";
-import Deals from "../../../pages/Deals";
-import Cart from "../../../pages/Cart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = ({ homeRoute, dealsRoute, cartRoute }) => {
   return (
-    <Router>
-      <Nav>
-        <NavbarLogo to="/">SUPER STORE</NavbarLogo>
+    <Nav>
+      <NavbarLogo to="/">SUPER STORE</NavbarLogo>
 
-        <NavbarItems>
-          <NavbarItem>
-            <NavbarLink
-              to="/"
-              exact
-              activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
-            >
-              Home
-            </NavbarLink>
-          </NavbarItem>
-          <NavbarItem>
-            <NavbarLink
-              to="/deals"
-              exact
-              activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
-            >
-              Deals
-            </NavbarLink>
-          </NavbarItem>
-          <NavbarItem>
-            <NavbarLink
-              to="/cart"
-              exact
-              activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
-            >
-              Cart
-            </NavbarLink>
-          </NavbarItem>
-        </NavbarItems>
-      </Nav>
-
-      <Switch>
-        <Route path="/deals" component={Deals}></Route>
-        <Route path="/cart" component={Cart}></Route>
-        <Route path="/" component={Home}></Route>
-      </Switch>
-    </Router>
+      <NavbarItems>
+        <NavbarItem>
+          <NavbarLink
+            to={homeRoute}
+            exact
+            activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
+          >
+            <FontAwesomeIcon icon={faHome} /> Home
+          </NavbarLink>
+        </NavbarItem>
+        <NavbarItem>
+          <NavbarLink
+            to={dealsRoute}
+            exact
+            activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
+          >
+            <FontAwesomeIcon icon={faTags} /> Deals
+          </NavbarLink>
+        </NavbarItem>
+        <NavbarItem>
+          <NavbarLink
+            to={cartRoute}
+            exact
+            activeStyle={{ color: "var(--darkBlue)", fontWeight: "700" }}
+          >
+            <FontAwesomeIcon icon={faShoppingCart} /> Cart
+          </NavbarLink>
+        </NavbarItem>
+      </NavbarItems>
+    </Nav>
   );
 };
 

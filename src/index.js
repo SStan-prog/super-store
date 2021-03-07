@@ -1,14 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import GlobalStyle from "./globalStyles";
-import Navbar from "./components/navigation/Navbar";
+import App from "./app";
 
 ReactDOM.render(
-  <>
-    <GlobalStyle />
-    <Navbar></Navbar>
-  </>,
+  <App />,
 
   document.getElementById("root")
 );

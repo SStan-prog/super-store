@@ -3,8 +3,8 @@ import { css } from "styled-components";
 const sizes = {
   tabland: 1200,
   tabport: 900,
-  phone: 600,
-  phonesmall: 450,
+  phone: 700,
+  phonesmall: 475,
 };
 
 export const media = Object.keys(sizes).reduce((acc, label) => {
